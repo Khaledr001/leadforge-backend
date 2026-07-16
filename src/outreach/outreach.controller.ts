@@ -36,6 +36,11 @@ export class OutreachController {
     return this.outreachService.getStats();
   }
 
+  @Get('sequences')
+  sequences() {
+    return this.outreachService.listSequences();
+  }
+
   // Email-footer unsubscribe links are clicked (GET). Public + raw HTML response.
   @Public()
   @SkipTransform()

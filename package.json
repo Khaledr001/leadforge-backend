@@ -17,6 +17,8 @@
     "prisma:generate": "prisma generate",
     "prisma:push": "prisma db push",
     "prisma:studio": "prisma studio",
+    "db:seed": "tsx prisma/seed.ts",
+    "cli": "node dist/cli.js",
     "db:up": "docker compose up -d",
     "db:down": "docker compose down"
   },
@@ -37,6 +39,7 @@
     "class-validator": "^0.15.1",
     "handlebars": "^4.7.9",
     "joi": "^17.13.0",
+    "nest-commander": "^3.20.1",
     "nestjs-pino": "^4.1.0",
     "nodemailer": "^8.0.5",
     "pino": "^9.5.0",

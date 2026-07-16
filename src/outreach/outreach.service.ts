@@ -172,6 +172,16 @@ export class OutreachService {
     return { resumed: true };
   }
 
+  /** Leads with outreach sequences and their steps (dashboard sequence table). */
+  async listSequences(limit = 50) {
+    return this.prisma.lead.findMany({
+      where: { outreachSteps: { some: {} } },
+      include: { outreachSteps: { orderBy: { stepNumber: 'asc' } } },
+      orderBy: { updatedAt: 'desc' },
+      take: limit,
+    });
+  }
+
   async getStats(): Promise<OutreachStats> {
     const [scheduled, sent, opened, clicked, replied, failed, cancelled] =
       await Promise.all([
