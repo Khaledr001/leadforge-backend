@@ -12,6 +12,7 @@ import { LeadsModule } from './leads/leads.module';
 import { ScraperModule } from './scraper/scraper.module';
 import { EnricherModule } from './enricher/enricher.module';
 import { AiCopyModule } from './ai-copy/ai-copy.module';
+import { SitesModule } from './sites/sites.module';
 import { AllExceptionsFilter } from './common/filters/all-exceptions.filter';
 import { LoggingInterceptor } from './common/interceptors/logging.interceptor';
 import { TransformInterceptor } from './common/interceptors/transform.interceptor';
@@ -82,8 +83,9 @@ import { AuthGuard } from './common/guards/auth.guard';
     ScraperModule,
     EnricherModule,
     AiCopyModule,
-    // Feature modules added in later phases (6–10):
-    // SitesModule, OutreachModule, ClientsModule,
+    SitesModule,
+    // Feature modules added in later phases (8–10):
+    // OutreachModule, ClientsModule,
     // AiServicesModule, BillingModule, AnalyticsModule.
   ],
   providers: [
