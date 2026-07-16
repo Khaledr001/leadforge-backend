@@ -55,6 +55,7 @@ import {
         GOOGLE_PLACES_API_KEY: Joi.string().allow('').default(''),
         OUTSCRAPER_API_KEY: Joi.string().allow('').default(''),
         ANTHROPIC_API_KEY: Joi.string().allow('').default(''),
+        ANTHROPIC_MODEL: Joi.string().default('claude-sonnet-5'),
         CLOUDFLARE_API_TOKEN: Joi.string().allow('').default(''),
         CLOUDFLARE_ACCOUNT_ID: Joi.string().allow('').default(''),
         SITE_BASE_DOMAIN: Joi.string().allow('').default('yourbrand.site'),

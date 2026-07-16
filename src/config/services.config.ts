@@ -12,6 +12,7 @@ export const outscraperConfig = registerAs('outscraper', () => ({
 
 export const anthropicConfig = registerAs('anthropic', () => ({
   apiKey: process.env.ANTHROPIC_API_KEY ?? '',
+  model: process.env.ANTHROPIC_MODEL ?? 'claude-sonnet-5',
 }));
 
 export const cloudflareConfig = registerAs('cloudflare', () => ({

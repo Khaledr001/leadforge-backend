@@ -11,6 +11,7 @@ import { HealthModule } from './health/health.module';
 import { LeadsModule } from './leads/leads.module';
 import { ScraperModule } from './scraper/scraper.module';
 import { EnricherModule } from './enricher/enricher.module';
+import { AiCopyModule } from './ai-copy/ai-copy.module';
 import { AllExceptionsFilter } from './common/filters/all-exceptions.filter';
 import { LoggingInterceptor } from './common/interceptors/logging.interceptor';
 import { TransformInterceptor } from './common/interceptors/transform.interceptor';
@@ -80,9 +81,10 @@ import { AuthGuard } from './common/guards/auth.guard';
     LeadsModule,
     ScraperModule,
     EnricherModule,
-    // Feature modules added in later phases (5–10):
-    // SitesModule, AiCopyModule, OutreachModule,
-    // ClientsModule, AiServicesModule, BillingModule, AnalyticsModule.
+    AiCopyModule,
+    // Feature modules added in later phases (6–10):
+    // SitesModule, OutreachModule, ClientsModule,
+    // AiServicesModule, BillingModule, AnalyticsModule.
   ],
   providers: [
     { provide: APP_FILTER, useClass: AllExceptionsFilter },
