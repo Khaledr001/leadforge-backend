@@ -8,6 +8,8 @@ Package manager: **pnpm**. The Next.js dashboard is a separate repo
 - `pnpm start:dev` — dev server with watch (port 3001)
 - `pnpm build` · `pnpm typecheck` · `pnpm lint`
 - `pnpm prisma:generate` · `pnpm prisma:push` · `pnpm prisma:studio`
+- `pnpm db:seed` — 50 demo leads + sites/sequences/clients (tsx prisma/seed.ts)
+- `pnpm cli <cmd>` — nest-commander CLI (scrape, enrich, generate-site(s), start-outreach, outreach-stats)
 
 ## Conventions
 - TypeScript strict; no `any`, no `@ts-ignore`. ESLint 9 flat config.
