@@ -1,0 +1,196 @@
+// LeadForge — single source of truth for DB types.
+// Maps to Supabase / native PostgreSQL. Prisma generates the TS client.
+
+generator client {
+  provider = "prisma-client-js"
+  // No custom output: under pnpm, Prisma must generate next to the hoisted
+  // @prisma/client (in the .pnpm store). A custom path breaks runtime resolution.
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================
+// Enums
+// ============================================================
+
+enum LeadStatus {
+  NEW
+  ENRICHED
+  SITE_BUILT
+  CONTACTED
+  REPLIED
+  DEMO_BOOKED
+  CLOSED_WON
+  CLOSED_LOST
+  UNSUBSCRIBED
+}
+
+enum OutreachChannel {
+  EMAIL
+  PHONE
+  SMS
+}
+
+enum OutreachStepStatus {
+  SCHEDULED
+  SENT
+  FAILED
+  CANCELLED
+}
+
+enum ClientPlan {
+  WEBSITE_ONLY
+  WEBSITE_PLUS_VOICE
+  FULL_PACKAGE
+}
+
+enum ServiceType {
+  AI_RECEPTIONIST
+  SOCIAL_MEDIA_AGENT
+  GBP_OPTIMIZATION
+}
+
+enum SocialPlatform {
+  FACEBOOK
+  INSTAGRAM
+  GOOGLE
+}
+
+enum SocialPostStatus {
+  DRAFT
+  SCHEDULED
+  POSTED
+  FAILED
+}
+
+// ============================================================
+// Models
+// ============================================================
+
+model Lead {
+  id                String     @id @default(uuid()) @db.Uuid
+  businessName      String     @map("business_name")
+  category          String?
+  phone             String?
+  email             String?
+  address           String?
+  city              String?
+  state             String?
+  zip               String?
+  country           String     @default("US")
+  latitude          Decimal?   @db.Decimal(10, 7)
+  longitude         Decimal?   @db.Decimal(10, 7)
+  googlePlaceId     String?    @unique @map("google_place_id")
+  googleRating      Decimal?   @db.Decimal(2, 1) @map("google_rating")
+  googleReviewCount Int?       @map("google_review_count")
+  websiteUrl        String?    @map("website_url")
+  facebookUrl       String?    @map("facebook_url")
+  status            LeadStatus @default(NEW)
+  createdAt         DateTime   @default(now()) @map("created_at")
+  updatedAt         DateTime   @updatedAt @map("updated_at")
+
+  generatedSites  GeneratedSite[]
+  outreachSteps   OutreachSequence[]
+  client          Client?
+  analyticsEvents AnalyticsEvent[]
+
+  @@index([status])
+  @@index([city, category])
+  @@map("leads")
+}
+
+model GeneratedSite {
+  id            String    @id @default(uuid()) @db.Uuid
+  lead          Lead      @relation(fields: [leadId], references: [id])
+  leadId        String    @map("lead_id") @db.Uuid
+  templateId    String    @map("template_id")
+  subdomain     String    @unique
+  deployUrl     String?   @map("deploy_url")
+  generatedCopy Json?     @map("generated_copy")
+  isClaimed     Boolean   @default(false) @map("is_claimed")
+  claimedAt     DateTime? @map("claimed_at")
+  visitCount    Int       @default(0) @map("visit_count")
+  lastVisitedAt DateTime? @map("last_visited_at")
+  createdAt     DateTime  @default(now()) @map("created_at")
+
+  @@map("generated_sites")
+}
+
+model OutreachSequence {
+  id          String             @id @default(uuid()) @db.Uuid
+  lead        Lead               @relation(fields: [leadId], references: [id])
+  leadId      String             @map("lead_id") @db.Uuid
+  channel     OutreachChannel
+  stepNumber  Int                @map("step_number")
+  scheduledAt DateTime           @map("scheduled_at")
+  sentAt      DateTime?          @map("sent_at")
+  openedAt    DateTime?          @map("opened_at")
+  clickedAt   DateTime?          @map("clicked_at")
+  repliedAt   DateTime?          @map("replied_at")
+  subject     String?
+  body        String?
+  status      OutreachStepStatus @default(SCHEDULED)
+
+  @@index([leadId, stepNumber])
+  @@map("outreach_sequences")
+}
+
+model Client {
+  id               String     @id @default(uuid()) @db.Uuid
+  lead             Lead       @relation(fields: [leadId], references: [id])
+  leadId           String     @unique @map("lead_id") @db.Uuid
+  stripeCustomerId String?    @map("stripe_customer_id")
+  plan             ClientPlan
+  mrr              Int // cents
+  startedAt        DateTime   @default(now()) @map("started_at")
+  churnedAt        DateTime?  @map("churned_at")
+
+  aiServices  AiService[]
+  socialPosts SocialPost[]
+
+  @@map("clients")
+}
+
+model AiService {
+  id              String      @id @default(uuid()) @db.Uuid
+  client          Client      @relation(fields: [clientId], references: [id])
+  clientId        String      @map("client_id") @db.Uuid
+  serviceType     ServiceType @map("service_type")
+  config          Json?
+  vapiAssistantId String?     @map("vapi_assistant_id")
+  isActive        Boolean     @default(true) @map("is_active")
+  monthlyCost     Int         @map("monthly_cost_cents") // cents
+  monthlyPrice    Int         @map("monthly_price_cents") // cents
+
+  @@map("ai_services")
+}
+
+model SocialPost {
+  id           String           @id @default(uuid()) @db.Uuid
+  client       Client           @relation(fields: [clientId], references: [id])
+  clientId     String           @map("client_id") @db.Uuid
+  platform     SocialPlatform
+  content      String
+  imagePrompt  String?          @map("image_prompt")
+  scheduledFor DateTime?        @map("scheduled_for")
+  postedAt     DateTime?        @map("posted_at")
+  status       SocialPostStatus @default(DRAFT)
+  createdAt    DateTime         @default(now()) @map("created_at")
+
+  @@map("social_posts")
+}
+
+model AnalyticsEvent {
+  id        String   @id @default(uuid()) @db.Uuid
+  lead      Lead?    @relation(fields: [leadId], references: [id])
+  leadId    String?  @map("lead_id") @db.Uuid
+  eventType String   @map("event_type")
+  metadata  Json?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([leadId, eventType])
+  @@map("analytics_events")
+}
