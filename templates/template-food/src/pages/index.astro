@@ -1,0 +1,393 @@
+---
+import data from '../data.json';
+
+const font = data.fontFamily || 'Inter';
+const fontParam = font.replace(/ /g, '+');
+const telHref = 'tel:' + String(data.phone).replace(/[^0-9+]/g, '');
+const paragraphs = String(data.aboutSection)
+  .split('\n\n')
+  .map((p) => p.trim())
+  .filter(Boolean);
+const locality = [data.city, data.state].filter(Boolean).join(', ');
+const fullAddress = [data.address, locality, data.zip].filter(Boolean).join(', ');
+const year = new Date().getFullYear();
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: data.businessName,
+  telephone: data.phone,
+  description: data.metaDescription,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: data.address,
+    addressLocality: data.city,
+    addressRegion: data.state,
+    postalCode: data.zip,
+    addressCountry: 'US',
+  },
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{data.metaTitle}</title>
+    <meta name="description" content={data.metaDescription} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={data.businessName} />
+    <meta property="og:title" content={data.metaTitle} />
+    <meta property="og:description" content={data.metaDescription} />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href={`https://fonts.googleapis.com/css2?family=${fontParam}:wght@400;600;700;800&display=swap`}
+    />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body>
+    <header class="site">
+      <div class="bar">
+        <span class="brand">{data.businessName}</span>
+        <a class="call" href={telHref}>&#9742; {data.phone}</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          {locality && <p class="eyebrow">{locality}</p>}
+          <h1>{data.heroHeadline}</h1>
+          <p class="sub">{data.heroSubheadline}</p>
+          <a class="btn" href={telHref}>{data.ctaText}</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container about">
+          <h2>About Us</h2>
+          <div class="accent-underline"></div>
+          {paragraphs.map((p) => <p>{p}</p>)}
+        </div>
+      </section>
+
+      <section class="section tinted">
+        <div class="container">
+          <h2>Our Services</h2>
+          <div class="accent-underline"></div>
+          <div class="services-grid">
+            {
+              data.services.map((s) => (
+                <div class="card">
+                  <h3>{s.name}</h3>
+                  <p>{s.description}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>What Our Customers Say</h2>
+          <div class="accent-underline"></div>
+          <div class="testi-grid">
+            {
+              data.testimonials.map((t) => (
+                <figure class="testi">
+                  <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                  <blockquote>{t.text}</blockquote>
+                  <figcaption class="who">— {t.author}</figcaption>
+                </figure>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <section class="section tinted contact">
+        <div class="container">
+          <h2>Visit or Call Us</h2>
+          <div class="accent-underline"></div>
+          <div class="contact-grid">
+            {
+              data.googleMapsEmbedUrl && (
+                <iframe
+                  title={`Map to ${data.businessName}`}
+                  loading="lazy"
+                  src={data.googleMapsEmbedUrl}
+                />
+              )
+            }
+            <div class="details">
+              <p><strong>Address</strong><br />{fullAddress}</p>
+              <p><strong>Phone</strong><br /><a href={telHref}>{data.phone}</a></p>
+              {
+                data.hours && (
+                  <div>
+                    <p><strong>Hours</strong></p>
+                    <ul class="hours">
+                      {data.hours.map((h) => (
+                        <li>
+                          <span>{h.label}</span>
+                          <span>{h.value}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )
+              }
+              <p><a class="btn" href={telHref}>{data.ctaText}</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site">
+      <div class="container">
+        <p><strong>{data.businessName}</strong></p>
+        <p>{fullAddress} &middot; <a href={telHref}>{data.phone}</a></p>
+        <p class="fine">© {year} {data.businessName}. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div class="mobile-cta">
+      <a href={telHref}>&#9742; {data.ctaText}</a>
+    </div>
+
+    <style define:vars={{ primary: data.primaryColor, accent: data.accentColor, fontName: font }}>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--fontName), system-ui, -apple-system, sans-serif;
+        color: #1a1a1a;
+        line-height: 1.6;
+      }
+      iframe {
+        max-width: 100%;
+      }
+      .container {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      a.btn {
+        display: inline-block;
+        background: var(--primary);
+        color: #fff;
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      a.btn:hover {
+        opacity: 0.92;
+      }
+      header.site {
+        position: sticky;
+        top: 0;
+        background: #fff;
+        border-bottom: 1px solid #eee;
+        z-index: 10;
+      }
+      header .bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 14px 20px;
+      }
+      header .brand {
+        font-weight: 800;
+        font-size: 1.15rem;
+        color: var(--primary);
+      }
+      header .call {
+        font-weight: 700;
+        color: var(--primary);
+        text-decoration: none;
+      }
+      .hero {
+        text-align: center;
+        padding: 64px 20px;
+        background: color-mix(in srgb, var(--primary) 7%, #fff);
+      }
+      .hero .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+      .hero h1 {
+        font-size: 2rem;
+        margin: 12px 0;
+        color: var(--primary);
+      }
+      .hero .sub {
+        max-width: 640px;
+        margin: 0 auto 24px;
+        font-size: 1.1rem;
+        color: #444;
+      }
+      .section {
+        padding: 56px 0;
+      }
+      .section.tinted {
+        background: color-mix(in srgb, var(--accent) 10%, #fff);
+      }
+      .section h2 {
+        font-size: 1.6rem;
+        color: var(--primary);
+      }
+      .accent-underline {
+        width: 56px;
+        height: 4px;
+        border-radius: 2px;
+        background: var(--accent);
+        margin: 10px 0 28px;
+      }
+      .about p {
+        margin-bottom: 14px;
+        color: #333;
+      }
+      .services-grid,
+      .testi-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #eee;
+        border-top: 4px solid var(--accent);
+        border-radius: 10px;
+        padding: 22px;
+      }
+      .card h3 {
+        margin-bottom: 6px;
+        color: var(--primary);
+      }
+      .testi {
+        background: #fff;
+        border-radius: 10px;
+        padding: 22px;
+        border: 1px solid #eee;
+      }
+      .testi .stars {
+        color: var(--accent);
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+      }
+      .testi blockquote {
+        color: #333;
+        font-style: italic;
+      }
+      .testi .who {
+        margin-top: 10px;
+        font-weight: 700;
+        color: var(--primary);
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .contact iframe {
+        width: 100%;
+        height: 280px;
+        border: 0;
+        border-radius: 10px;
+      }
+      .contact .details p {
+        margin-bottom: 10px;
+      }
+      .hours {
+        list-style: none;
+        margin-bottom: 10px;
+      }
+      .hours li {
+        display: flex;
+        justify-content: space-between;
+        max-width: 320px;
+        padding: 6px 0;
+        border-bottom: 1px dashed #ddd;
+      }
+      footer.site {
+        background: var(--primary);
+        color: #fff;
+        text-align: center;
+        padding: 28px 20px;
+      }
+      footer.site a {
+        color: #fff;
+      }
+      footer .fine {
+        opacity: 0.8;
+        margin-top: 8px;
+        font-size: 0.85rem;
+      }
+      .mobile-cta {
+        display: none;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 20;
+        background: var(--primary);
+        padding: 8px;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.15);
+      }
+      .mobile-cta a {
+        display: block;
+        text-align: center;
+        padding: 12px;
+        color: #fff;
+        font-weight: 800;
+        font-size: 1.05rem;
+        text-decoration: none;
+      }
+      @media (max-width: 768px) {
+        .mobile-cta {
+          display: block;
+        }
+        body {
+          padding-bottom: 64px;
+        }
+        header .call {
+          display: none;
+        }
+      }
+      @media (min-width: 768px) {
+        .hero h1 {
+          font-size: 3rem;
+        }
+        .services-grid,
+        .testi-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .contact-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </body>
+</html>
