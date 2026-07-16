@@ -65,6 +65,12 @@ import {
         SMTP_PASS: Joi.string().allow('').default(''),
         SMTP_FROM_NAME: Joi.string().allow('').default('LeadForge'),
         SMTP_FROM_EMAIL: Joi.string().allow('').default('outreach@example.com'),
+        SENDER_ADDRESS: Joi.string()
+          .allow('')
+          .default('123 Main Street, Austin, TX 78701'),
+        OUTREACH_UNSUBSCRIBE_SECRET: Joi.string()
+          .allow('')
+          .default('leadforge-dev-unsubscribe-secret'),
         REDIS_URL: Joi.string().default('redis://localhost:6379'),
         STRIPE_SECRET_KEY: Joi.string().allow('').default(''),
         STRIPE_WEBHOOK_SECRET: Joi.string().allow('').default(''),

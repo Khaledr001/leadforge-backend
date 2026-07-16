@@ -28,6 +28,9 @@ export const emailConfig = registerAs('email', () => ({
   pass: process.env.SMTP_PASS ?? '',
   fromName: process.env.SMTP_FROM_NAME ?? 'LeadForge',
   fromEmail: process.env.SMTP_FROM_EMAIL ?? 'outreach@example.com',
+  // CAN-SPAM: a physical mailing address in every email footer.
+  senderAddress:
+    process.env.SENDER_ADDRESS ?? '123 Main Street, Austin, TX 78701',
 }));
 
 export const redisConfig = registerAs('redis', () => ({

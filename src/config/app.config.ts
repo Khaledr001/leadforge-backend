@@ -9,4 +9,6 @@ export default registerAs('app', () => ({
   apiUrl: process.env.API_BASE_URL ?? 'http://localhost:3001',
   dashboardUrl: process.env.DASHBOARD_URL ?? 'http://localhost:3000',
   templatesDir: process.env.TEMPLATES_DIR ?? join(process.cwd(), 'templates'),
+  unsubscribeSecret:
+    process.env.OUTREACH_UNSUBSCRIBE_SECRET ?? 'leadforge-dev-unsubscribe-secret',
 }));
