@@ -44,4 +44,5 @@ export const stripeConfig = registerAs('stripe', () => ({
 
 export const vapiConfig = registerAs('vapi', () => ({
   apiKey: process.env.VAPI_API_KEY ?? '',
+  baseUrl: process.env.VAPI_BASE_URL ?? 'https://api.vapi.ai',
 }));

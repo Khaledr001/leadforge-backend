@@ -75,6 +75,7 @@ import {
         STRIPE_SECRET_KEY: Joi.string().allow('').default(''),
         STRIPE_WEBHOOK_SECRET: Joi.string().allow('').default(''),
         VAPI_API_KEY: Joi.string().allow('').default(''),
+        VAPI_BASE_URL: Joi.string().uri().default('https://api.vapi.ai'),
       }),
       validationOptions: {
         allowUnknown: true,
