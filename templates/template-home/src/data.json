@@ -1,36 +1,36 @@
 {
-  "businessName": "Summit Plumbing Co.",
-  "phone": "+1 (512) 555-0134",
-  "address": "1200 Industrial Blvd",
-  "city": "Austin",
-  "state": "TX",
-  "zip": "78745",
-  "heroHeadline": "Austin's Trusted Plumbing Experts",
-  "heroSubheadline": "Fast, honest, and reliable plumbing repairs and installations — available 24/7 for emergencies.",
-  "aboutSection": "For over 15 years, Summit Plumbing has kept Austin homes and businesses flowing. What started as a one-truck operation is now the area's most-called name for dependable plumbing.\n\nOur licensed, insured technicians show up on time, explain the problem in plain English, and fix it right the first time — no surprises on the invoice.\n\nFrom a leaky faucet to a full repipe, we treat your home like our own and stand behind every job with a satisfaction guarantee.",
+  "businessName": "Evergreen Lawn & Landscape",
+  "phone": "+1 (615) 555-0143",
+  "address": "710 Maple Grove Rd",
+  "city": "Nashville",
+  "state": "TN",
+  "zip": "37211",
+  "heroHeadline": "A Yard You'll Be Proud Of",
+  "heroSubheadline": "Full-service lawn care and landscaping that keeps your property looking its best all year.",
+  "aboutSection": "Evergreen Lawn & Landscape has been shaping beautiful Nashville yards for over a decade. We treat every property like it's our own.\n\nOur crews are punctual, tidy, and detail-obsessed — from a weekly mow to a full landscape redesign, we sweat the small stuff so you don't have to.\n\nWe're fully licensed and insured, and we back every service with a satisfaction guarantee.",
   "services": [
-    { "name": "Emergency Repairs", "description": "24/7 rapid response for burst pipes, major leaks, and clogs." },
-    { "name": "Water Heater Service", "description": "Tank and tankless water heater installation and repair." },
-    { "name": "Drain & Sewer Cleaning", "description": "Professional drain clearing and sewer line hydro-jetting." },
-    { "name": "Fixture Installation", "description": "Faucets, toilets, and fixtures installed to code." },
-    { "name": "Leak Detection", "description": "Non-invasive detection to find and stop hidden leaks." },
-    { "name": "Whole-Home Repiping", "description": "Durable repiping with quality copper or PEX materials." }
+    { "name": "Lawn Maintenance", "description": "Reliable mowing, edging, and trimming on a schedule that suits you." },
+    { "name": "Landscape Design", "description": "Custom plantings and hardscapes that elevate your curb appeal." },
+    { "name": "Fertilization & Weed Control", "description": "Season-long programs for a thick, healthy, green lawn." },
+    { "name": "Mulch & Bed Care", "description": "Fresh mulch, clean edges, and healthy planting beds." },
+    { "name": "Leaf & Seasonal Cleanup", "description": "Spring and fall cleanups that keep your yard pristine." },
+    { "name": "Irrigation", "description": "Sprinkler installation, tune-ups, and repairs." }
   ],
   "testimonials": [
-    { "text": "They fixed our burst pipe within an hour of calling. Absolute lifesavers.", "author": "Maria G." },
-    { "text": "Honest pricing and clean, careful work. Highly recommend these folks.", "author": "James T." },
-    { "text": "Professional, on time, and tidied up before leaving. Will call again.", "author": "Priya N." }
+    { "text": "Our lawn has never looked better. The crew is reliable and thorough.", "author": "Karen W." },
+    { "text": "They redesigned our whole front yard and the neighbors keep asking who did it.", "author": "Tom H." },
+    { "text": "Always on time, always tidy. Worth every penny.", "author": "Nadia B." }
   ],
-  "ctaText": "Call Now for a Free Quote",
-  "metaTitle": "Summit Plumbing Co. — Plumbers in Austin, TX",
-  "metaDescription": "Trusted 24/7 plumbing repairs and installations in Austin, TX. Licensed, insured, fair pricing. Call now for a free quote.",
-  "googleMapsEmbedUrl": "https://www.google.com/maps?q=Austin,TX&output=embed",
+  "ctaText": "Call for a Free Estimate",
+  "metaTitle": "Evergreen Lawn & Landscape — Landscaping in Nashville, TN",
+  "metaDescription": "Full-service lawn care and landscaping in Nashville, TN. Licensed, insured, and satisfaction guaranteed. Call for a free estimate.",
+  "googleMapsEmbedUrl": "https://www.google.com/maps?q=Nashville,TN&output=embed",
   "hours": [
-    { "label": "Mon–Fri", "value": "7:00 AM – 7:00 PM" },
-    { "label": "Saturday", "value": "8:00 AM – 5:00 PM" },
-    { "label": "Sunday", "value": "Emergency only" }
+    { "label": "Mon–Fri", "value": "7:00 AM – 6:00 PM" },
+    { "label": "Saturday", "value": "8:00 AM – 2:00 PM" },
+    { "label": "Sunday", "value": "Closed" }
   ],
-  "primaryColor": "#1e2a4a",
-  "accentColor": "#f5a623",
+  "primaryColor": "#24503a",
+  "accentColor": "#b08d57",
   "fontFamily": "Inter"
 }

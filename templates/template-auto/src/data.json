@@ -1,36 +1,36 @@
 {
-  "businessName": "Summit Plumbing Co.",
-  "phone": "+1 (512) 555-0134",
-  "address": "1200 Industrial Blvd",
-  "city": "Austin",
-  "state": "TX",
-  "zip": "78745",
-  "heroHeadline": "Austin's Trusted Plumbing Experts",
-  "heroSubheadline": "Fast, honest, and reliable plumbing repairs and installations — available 24/7 for emergencies.",
-  "aboutSection": "For over 15 years, Summit Plumbing has kept Austin homes and businesses flowing. What started as a one-truck operation is now the area's most-called name for dependable plumbing.\n\nOur licensed, insured technicians show up on time, explain the problem in plain English, and fix it right the first time — no surprises on the invoice.\n\nFrom a leaky faucet to a full repipe, we treat your home like our own and stand behind every job with a satisfaction guarantee.",
+  "businessName": "Redline Auto Repair",
+  "phone": "+1 (602) 555-0170",
+  "address": "3355 W Grand Ave",
+  "city": "Phoenix",
+  "state": "AZ",
+  "zip": "85009",
+  "heroHeadline": "Honest Auto Repair You Can Count On",
+  "heroSubheadline": "ASE-certified technicians, fair pricing, and work backed by a nationwide warranty.",
+  "aboutSection": "Redline Auto Repair has kept Phoenix drivers on the road for more than two decades. We built our reputation the hard way — one honest repair at a time.\n\nOur ASE-certified technicians diagnose the real problem and tell you straight, so you never pay for work you don't need.\n\nEvery repair is backed by a nationwide 24-month / 24,000-mile warranty, because we stand behind what we do.",
   "services": [
-    { "name": "Emergency Repairs", "description": "24/7 rapid response for burst pipes, major leaks, and clogs." },
-    { "name": "Water Heater Service", "description": "Tank and tankless water heater installation and repair." },
-    { "name": "Drain & Sewer Cleaning", "description": "Professional drain clearing and sewer line hydro-jetting." },
-    { "name": "Fixture Installation", "description": "Faucets, toilets, and fixtures installed to code." },
-    { "name": "Leak Detection", "description": "Non-invasive detection to find and stop hidden leaks." },
-    { "name": "Whole-Home Repiping", "description": "Durable repiping with quality copper or PEX materials." }
+    { "name": "Diagnostics", "description": "Accurate computer diagnostics to pinpoint the real issue fast." },
+    { "name": "Brakes & Rotors", "description": "Complete brake inspection, pads, rotors, and fluid service." },
+    { "name": "Oil & Maintenance", "description": "Fast oil changes and scheduled factory maintenance." },
+    { "name": "Engine Repair", "description": "From check-engine lights to major engine work, done right." },
+    { "name": "AC & Heating", "description": "Stay cool in the desert with expert AC service and repair." },
+    { "name": "Tires & Alignment", "description": "New tires, rotation, balancing, and precision alignment." }
   ],
   "testimonials": [
-    { "text": "They fixed our burst pipe within an hour of calling. Absolute lifesavers.", "author": "Maria G." },
-    { "text": "Honest pricing and clean, careful work. Highly recommend these folks.", "author": "James T." },
-    { "text": "Professional, on time, and tidied up before leaving. Will call again.", "author": "Priya N." }
+    { "text": "They found the actual problem two other shops missed. Fair price too.", "author": "Marcus D." },
+    { "text": "Fast, straight-talking, and no upselling. Finally a shop I trust.", "author": "Linda P." },
+    { "text": "Warranty work was painless and they had me back on the road same day.", "author": "Trevor S." }
   ],
-  "ctaText": "Call Now for a Free Quote",
-  "metaTitle": "Summit Plumbing Co. — Plumbers in Austin, TX",
-  "metaDescription": "Trusted 24/7 plumbing repairs and installations in Austin, TX. Licensed, insured, fair pricing. Call now for a free quote.",
-  "googleMapsEmbedUrl": "https://www.google.com/maps?q=Austin,TX&output=embed",
+  "ctaText": "Call for a Free Estimate",
+  "metaTitle": "Redline Auto Repair — Auto Shop in Phoenix, AZ",
+  "metaDescription": "ASE-certified auto repair in Phoenix, AZ. Honest diagnostics, fair pricing, and a nationwide warranty. Call for a free estimate.",
+  "googleMapsEmbedUrl": "https://www.google.com/maps?q=Phoenix,AZ&output=embed",
   "hours": [
-    { "label": "Mon–Fri", "value": "7:00 AM – 7:00 PM" },
-    { "label": "Saturday", "value": "8:00 AM – 5:00 PM" },
-    { "label": "Sunday", "value": "Emergency only" }
+    { "label": "Mon–Fri", "value": "7:30 AM – 6:00 PM" },
+    { "label": "Saturday", "value": "8:00 AM – 3:00 PM" },
+    { "label": "Sunday", "value": "Closed" }
   ],
-  "primaryColor": "#1e2a4a",
-  "accentColor": "#f5a623",
+  "primaryColor": "#2b2b30",
+  "accentColor": "#d1332e",
   "fontFamily": "Inter"
 }

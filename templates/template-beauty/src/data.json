@@ -1,36 +1,36 @@
 {
-  "businessName": "Summit Plumbing Co.",
-  "phone": "+1 (512) 555-0134",
-  "address": "1200 Industrial Blvd",
-  "city": "Austin",
-  "state": "TX",
-  "zip": "78745",
-  "heroHeadline": "Austin's Trusted Plumbing Experts",
-  "heroSubheadline": "Fast, honest, and reliable plumbing repairs and installations — available 24/7 for emergencies.",
-  "aboutSection": "For over 15 years, Summit Plumbing has kept Austin homes and businesses flowing. What started as a one-truck operation is now the area's most-called name for dependable plumbing.\n\nOur licensed, insured technicians show up on time, explain the problem in plain English, and fix it right the first time — no surprises on the invoice.\n\nFrom a leaky faucet to a full repipe, we treat your home like our own and stand behind every job with a satisfaction guarantee.",
+  "businessName": "Bloom Beauty Studio",
+  "phone": "+1 (305) 555-0188",
+  "address": "480 Ocean Drive",
+  "city": "Miami",
+  "state": "FL",
+  "zip": "33139",
+  "heroHeadline": "Leave Feeling Absolutely Radiant",
+  "heroSubheadline": "Expert cuts, color, and skincare in the heart of Miami. Book your transformation today.",
+  "aboutSection": "Bloom Beauty Studio is a full-service salon built on one idea: everyone deserves to feel their best. From the moment you walk in, our team is focused on you.\n\nOur stylists train year-round on the latest techniques, so whether you want a subtle refresh or a bold new look, you're in expert hands.\n\nWe use gentle, professional-grade products and take the time to understand exactly what you want before we begin.",
   "services": [
-    { "name": "Emergency Repairs", "description": "24/7 rapid response for burst pipes, major leaks, and clogs." },
-    { "name": "Water Heater Service", "description": "Tank and tankless water heater installation and repair." },
-    { "name": "Drain & Sewer Cleaning", "description": "Professional drain clearing and sewer line hydro-jetting." },
-    { "name": "Fixture Installation", "description": "Faucets, toilets, and fixtures installed to code." },
-    { "name": "Leak Detection", "description": "Non-invasive detection to find and stop hidden leaks." },
-    { "name": "Whole-Home Repiping", "description": "Durable repiping with quality copper or PEX materials." }
+    { "name": "Cut & Style", "description": "Precision cuts and finishes tailored to your face and lifestyle." },
+    { "name": "Color & Balayage", "description": "Rich, dimensional color from subtle highlights to full transformations." },
+    { "name": "Facials & Skincare", "description": "Customized facials that leave your skin glowing and refreshed." },
+    { "name": "Manicure & Pedicure", "description": "Relaxing nail care with long-lasting, flawless results." },
+    { "name": "Waxing", "description": "Smooth, gentle waxing by experienced estheticians." },
+    { "name": "Bridal & Events", "description": "On-site hair and makeup for your most important days." }
   ],
   "testimonials": [
-    { "text": "They fixed our burst pipe within an hour of calling. Absolute lifesavers.", "author": "Maria G." },
-    { "text": "Honest pricing and clean, careful work. Highly recommend these folks.", "author": "James T." },
-    { "text": "Professional, on time, and tidied up before leaving. Will call again.", "author": "Priya N." }
+    { "text": "Best balayage I've ever had. I get compliments everywhere I go.", "author": "Sofia R." },
+    { "text": "The whole team is so welcoming and talented. My new go-to salon.", "author": "Danielle K." },
+    { "text": "They did my bridal hair and it was flawless all day and night.", "author": "Amira L." }
   ],
-  "ctaText": "Call Now for a Free Quote",
-  "metaTitle": "Summit Plumbing Co. — Plumbers in Austin, TX",
-  "metaDescription": "Trusted 24/7 plumbing repairs and installations in Austin, TX. Licensed, insured, fair pricing. Call now for a free quote.",
-  "googleMapsEmbedUrl": "https://www.google.com/maps?q=Austin,TX&output=embed",
+  "ctaText": "Book Your Appointment",
+  "metaTitle": "Bloom Beauty Studio — Salon in Miami, FL",
+  "metaDescription": "Full-service hair, color, skincare, and nails in Miami, FL. Expert stylists and a relaxing experience. Book your appointment today.",
+  "googleMapsEmbedUrl": "https://www.google.com/maps?q=Miami,FL&output=embed",
   "hours": [
-    { "label": "Mon–Fri", "value": "7:00 AM – 7:00 PM" },
-    { "label": "Saturday", "value": "8:00 AM – 5:00 PM" },
-    { "label": "Sunday", "value": "Emergency only" }
+    { "label": "Tue–Fri", "value": "9:00 AM – 7:00 PM" },
+    { "label": "Saturday", "value": "9:00 AM – 6:00 PM" },
+    { "label": "Sun–Mon", "value": "Closed" }
   ],
-  "primaryColor": "#1e2a4a",
-  "accentColor": "#f5a623",
-  "fontFamily": "Inter"
+  "primaryColor": "#9e3b5c",
+  "accentColor": "#c9a54e",
+  "fontFamily": "DM Sans"
 }

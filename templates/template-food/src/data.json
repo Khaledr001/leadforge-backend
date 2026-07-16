@@ -1,36 +1,36 @@
 {
-  "businessName": "Summit Plumbing Co.",
-  "phone": "+1 (512) 555-0134",
-  "address": "1200 Industrial Blvd",
-  "city": "Austin",
-  "state": "TX",
-  "zip": "78745",
-  "heroHeadline": "Austin's Trusted Plumbing Experts",
-  "heroSubheadline": "Fast, honest, and reliable plumbing repairs and installations — available 24/7 for emergencies.",
-  "aboutSection": "For over 15 years, Summit Plumbing has kept Austin homes and businesses flowing. What started as a one-truck operation is now the area's most-called name for dependable plumbing.\n\nOur licensed, insured technicians show up on time, explain the problem in plain English, and fix it right the first time — no surprises on the invoice.\n\nFrom a leaky faucet to a full repipe, we treat your home like our own and stand behind every job with a satisfaction guarantee.",
+  "businessName": "Terra & Sage Kitchen",
+  "phone": "+1 (503) 555-0121",
+  "address": "88 Alder Street",
+  "city": "Portland",
+  "state": "OR",
+  "zip": "97204",
+  "heroHeadline": "Seasonal Comfort Food, Made Fresh Daily",
+  "heroSubheadline": "A neighborhood kitchen serving locally sourced dishes in a warm, welcoming space.",
+  "aboutSection": "Terra & Sage started as a farmers-market stall and grew into Portland's favorite neighborhood kitchen. We still cook the way we always have — from scratch, with ingredients we're proud of.\n\nOur menu changes with the seasons, built around what local farms are harvesting that week. Nothing frozen, nothing rushed.\n\nWhether you're grabbing lunch, planning a dinner, or catering an event, we'd love to feed you like family.",
   "services": [
-    { "name": "Emergency Repairs", "description": "24/7 rapid response for burst pipes, major leaks, and clogs." },
-    { "name": "Water Heater Service", "description": "Tank and tankless water heater installation and repair." },
-    { "name": "Drain & Sewer Cleaning", "description": "Professional drain clearing and sewer line hydro-jetting." },
-    { "name": "Fixture Installation", "description": "Faucets, toilets, and fixtures installed to code." },
-    { "name": "Leak Detection", "description": "Non-invasive detection to find and stop hidden leaks." },
-    { "name": "Whole-Home Repiping", "description": "Durable repiping with quality copper or PEX materials." }
+    { "name": "Dine-In", "description": "A cozy, welcoming room and a menu that changes with the season." },
+    { "name": "Takeout", "description": "All your favorites, packed fresh and ready to go." },
+    { "name": "Catering", "description": "Thoughtful spreads for offices, parties, and celebrations." },
+    { "name": "Private Events", "description": "Buy out the room for an unforgettable gathering." },
+    { "name": "Weekend Brunch", "description": "Griddle classics and morning cocktails every Saturday and Sunday." },
+    { "name": "Bakery Counter", "description": "House-made breads and pastries baked every morning." }
   ],
   "testimonials": [
-    { "text": "They fixed our burst pipe within an hour of calling. Absolute lifesavers.", "author": "Maria G." },
-    { "text": "Honest pricing and clean, careful work. Highly recommend these folks.", "author": "James T." },
-    { "text": "Professional, on time, and tidied up before leaving. Will call again.", "author": "Priya N." }
+    { "text": "Everything tastes like it was made with real care. Our new weekend spot.", "author": "Ben C." },
+    { "text": "Catered our office lunch and the whole team is still talking about it.", "author": "Rachel M." },
+    { "text": "Cozy room, incredible food, genuinely kind staff. Ten out of ten.", "author": "Diego F." }
   ],
-  "ctaText": "Call Now for a Free Quote",
-  "metaTitle": "Summit Plumbing Co. — Plumbers in Austin, TX",
-  "metaDescription": "Trusted 24/7 plumbing repairs and installations in Austin, TX. Licensed, insured, fair pricing. Call now for a free quote.",
-  "googleMapsEmbedUrl": "https://www.google.com/maps?q=Austin,TX&output=embed",
+  "ctaText": "Call to Reserve or Order",
+  "metaTitle": "Terra & Sage Kitchen — Restaurant in Portland, OR",
+  "metaDescription": "Seasonal, locally sourced comfort food in Portland, OR. Dine-in, takeout, and catering. Call to reserve a table or place an order.",
+  "googleMapsEmbedUrl": "https://www.google.com/maps?q=Portland,OR&output=embed",
   "hours": [
-    { "label": "Mon–Fri", "value": "7:00 AM – 7:00 PM" },
-    { "label": "Saturday", "value": "8:00 AM – 5:00 PM" },
-    { "label": "Sunday", "value": "Emergency only" }
+    { "label": "Mon–Thu", "value": "11:00 AM – 9:00 PM" },
+    { "label": "Fri–Sat", "value": "9:00 AM – 10:00 PM" },
+    { "label": "Sunday", "value": "9:00 AM – 8:00 PM" }
   ],
-  "primaryColor": "#1e2a4a",
-  "accentColor": "#f5a623",
+  "primaryColor": "#b5533a",
+  "accentColor": "#cf8a3a",
   "fontFamily": "Inter"
 }
