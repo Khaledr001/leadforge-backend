@@ -15,6 +15,7 @@ import { AiCopyModule } from './ai-copy/ai-copy.module';
 import { SitesModule } from './sites/sites.module';
 import { AnalyticsModule } from './analytics/analytics.module';
 import { OutreachModule } from './outreach/outreach.module';
+import { BillingModule } from './billing/billing.module';
 import { AllExceptionsFilter } from './common/filters/all-exceptions.filter';
 import { LoggingInterceptor } from './common/interceptors/logging.interceptor';
 import { TransformInterceptor } from './common/interceptors/transform.interceptor';
@@ -88,8 +89,9 @@ import { AuthGuard } from './common/guards/auth.guard';
     SitesModule,
     AnalyticsModule,
     OutreachModule,
-    // Feature modules added in later phases (9–10):
-    // ClientsModule, AiServicesModule, BillingModule.
+    BillingModule,
+    // Feature modules added in later phases (10):
+    // ClientsModule, AiServicesModule.
   ],
   providers: [
     { provide: APP_FILTER, useClass: AllExceptionsFilter },
